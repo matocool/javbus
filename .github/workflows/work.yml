@@ -1,4 +1,4 @@
-名字: 'run'
+name: 'run'
 
 on:
   schedule:
@@ -10,15 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - 名字: 'setup python'
+      - name: 'setup python'
         uses: actions/setup-python@master
         with: 
-          python-version: 3.7
+          python-version: 3.11
 
-      - 名字: requirements
+      - name: requirements
         run : pip3 install -r requirements.txt
 
-      - 名字: main
+      - name: main
         env:
           cookie_javbus: ${{ secrets.cookie_javbus }}
         run: |
